@@ -21,6 +21,7 @@ jobs:
         uses: pypa/cibuildwheel@v2.14.0
         env:
           CIBW_ENVIRONMENT: PATH="/usr/lib/ccache:/usr/local/opt/ccache/libexec:$PATH"
+          CIBW_ARCHS_LINUX: "auto64"
 
       - uses: actions/upload-artifact@v3
         with:
