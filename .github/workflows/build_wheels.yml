@@ -14,16 +14,13 @@ jobs:
       - uses: actions/checkout@v3
         with:
           submodules: 'true'
+      - name: ccache
+        uses: hendrikmuhs/ccache-action@v1.2
 
       - name: Build wheels
         uses: pypa/cibuildwheel@v2.14.0
-        # env:
-        #   CIBW_SOME_OPTION: value
-        #    ...
-        # with:
-        #   package-dir: .
-        #   output-dir: wheelhouse
-        #   config-file: "{package}/pyproject.toml"
+        env:
+          CIBW_ENVIRONMENT: PATH="/usr/lib/ccache:/usr/local/opt/ccache/libexec:$PATH"
 
       - uses: actions/upload-artifact@v3
         with:
