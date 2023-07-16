@@ -1,4 +1,4 @@
-FROM quay.io/pypa/manylinux2014_x86_64:2022-11-27-b2d7fda
+FROM quay.io/pypa/manylinux2014_x86_64:2023-07-14-55e4124
 
 RUN yum -y install epel-release && \
  yum repolist
