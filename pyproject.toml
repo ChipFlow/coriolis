@@ -74,7 +74,14 @@ unittests = 'Coriolis:unittests'
 yosys_coriolis = 'Coriolis:yosys_coriolis'
 
 [build-system]
-requires = ["poetry-core", "setuptools", "cmake", "ninja", "patchelf;sys_platform=\"linux\"", "poetry-dynamic-versioning"]
+requires = [
+    'poetry-core',
+    'setuptools',
+    'cmake',
+    'ninja',
+    'poetry-dynamic-versioning',
+    'patchelf ; sys_platform == "linux"'
+]
 build-backend = "poetry_dynamic_versioning.backend"
 
 [tool.cibuildwheel.linux]
